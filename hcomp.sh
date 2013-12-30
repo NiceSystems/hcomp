@@ -45,7 +45,6 @@ then
   
 else
     # get completion info straight from  hdfs
-	echo "getting data from hdfs"
         local names1=$(for x in `hadoop fs -ls ${DIR} | awk '{print $8"completetmpahretzzkk"$1}' | sed 's/completetmpahretzzkkd.*$/\//' | sed 's/completetmpahretzzkk-.*$//' | sed 's/completetmpahretzzkkFound//'`;do echo $x;done)
         COMPREPLY=( $(compgen -W "${names1}" -- ${cur})  )
         # create cache(in bg)
